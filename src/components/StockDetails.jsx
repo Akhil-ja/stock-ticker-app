@@ -55,12 +55,12 @@ const StockDetails = ({ initialStockData, initialCompanyName, symbol }) => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-4">
         {displayCompanyName || symbol} ({symbol})
       </h1>
       <p className="text-xl mb-4">Latest Price: Rs. {latestStock.close}</p>
 
-      <div className="flex space-x-2 mb-4">
+      <div className="flex flex-wrap justify-center sm:justify-start space-x-2 sm:space-x-4 mb-4">
         {timeRanges.map((range) => (
           <button
             key={range.label}

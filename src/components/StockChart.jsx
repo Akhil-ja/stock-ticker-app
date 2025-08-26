@@ -92,7 +92,7 @@ const StockChart = ({ prices }) => {
   };
 
   return (
-    <div className="relative h-96 w-full">
+    <div className="relative h-64 sm:h-80 md:h-96 w-full">
       <Line data={data} options={options} />
     </div>
   );
