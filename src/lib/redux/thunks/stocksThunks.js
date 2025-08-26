@@ -17,10 +17,10 @@ export const fetchSearchResults = createAsyncThunk(
 
 export const fetchStockDetails = createAsyncThunk(
   "stocks/fetchStockDetails",
-  async (symbol, { rejectWithValue }) => {
+  async ({ symbol, days }, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://portal.tradebrains.in/api/assignment/stock/${symbol}/prices?days=30&type=INTRADAY&limit=30`
+        `https://portal.tradebrains.in/api/assignment/stock/${symbol}/prices?days=${days}&type=INTRADAY&limit=${days}`
       );
       if (response.data && response.data.length === 0) {
         return null;
