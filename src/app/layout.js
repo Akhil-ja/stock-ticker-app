@@ -1,14 +1,15 @@
-import "./globals.css";
+"use client";
 
-export const metadata = {
-  title: "Stock Ticker Application",
-  description: "A simple stock ticker application.",
-};
+import "./globals.css";
+import { Provider } from 'react-redux';
+import { store } from '@/lib/redux/store';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Provider store={store}>{children}</Provider>
+      </body>
     </html>
   );
 }
